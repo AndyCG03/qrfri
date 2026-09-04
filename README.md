@@ -24,23 +24,33 @@ Las cinco capturas se muestran consecutivamente para que el repositorio refleje 
 
 ### 1. Inicio y accesos rápidos
 
-![Inicio de QRfri](imagenes/image1.webp)
+<p align="center">
+  <img src="imagenes/image1.webp" alt="Inicio de QRfri" style="max-width: 50%; height: auto;">
+</p>
 
 ### 2. Creación del código
 
-![Editor de QR](imagenes/image2.webp)
+<p align="center">
+  <img src="imagenes/image2.webp" alt="Editor de QR" style="max-width: 50%; height: auto;">
+</p>
 
 ### 3. Personalización del diseño
 
-![Diseño del QR](imagenes/image3.webp)
+<p align="center">
+  <img src="imagenes/image3.webp" alt="Diseño del QR" style="max-width: 50%; height: auto;">
+</p>
 
 ### 4. Biblioteca Mis QR
 
-![Biblioteca de códigos](imagenes/image4.webp)
+<p align="center">
+  <img src="imagenes/image4.webp" alt="Biblioteca de códigos" style="max-width: 50%; height: auto;">
+</p>
 
 ### 5. Escaneo y resultado
 
-![Escáner de QR](imagenes/image5.webp)
+<p align="center">
+  <img src="imagenes/image5.webp" alt="Escáner de QR" style="max-width: 50%; height: auto;">
+</p>
 
 ## Funcionalidades principales
 
