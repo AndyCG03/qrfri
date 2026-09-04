@@ -1,0 +1,105 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Dart y Flutter generados
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+.fvm/
+.fvmrc
+.flutter_tool_state
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-plugin-dependencies
+**/build/
+**/coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/.symlinks/
+**/ios/Pods/
+
+# Android generado y configuración local
+**/.gradle/
+**/.kotlin/
+**/android/local.properties
+**/android/.cxx/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+**/android/captures/
+**/android/app/.cxx/
+**/android/app/build/outputs/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Apple / Xcode
+**/xcuserdata/
+**/*.xcuserstate
+**/*.xcscmblueprint
+**/*.dSYM/
+**/DerivedData/
+**/Pods/
+**/Runner/GoogleService-Info.plist
+
+# Símbolos y mapas de ofuscación
+app.*.symbols
+app.*.map.json
+
+# Claves, certificados y secretos de firma
+**/key.properties
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.pfx
+**/*.pem
+**/*.cer
+**/*.mobileprovision
+
+# Variables de entorno y secretos locales
+.env
+.env.*
+!.env.example
+*.secret
+secrets/
+private/
+
+# Respaldos y datos locales de usuario
+*.backup.json
+*.bak.json
+qrfri-backup.json
+
+# Artefactos de distribucion generados por CI o localmente
+*.apk
+*.aab
+*.ipa
+*.app.zip
+*.tar.gz
+*.sha256

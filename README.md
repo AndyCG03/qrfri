@@ -1,98 +1,146 @@
 # QRfri
 
-QRfri es una aplicación Flutter para crear, personalizar, guardar y escanear códigos QR sin depender de una cuenta ni de un servidor. El contenido y la biblioteca se mantienen localmente en el dispositivo.
+<p align="center">
+  <img src="assets/horizontal.png" alt="QRfri" height="96">
+</p>
 
-## Funcionalidades
+<p align="center">Generador, personalizador y lector de códigos QR privado, local y offline-first.</p>
 
-- Creación de QR para enlaces, texto, Wi-Fi, contacto, WhatsApp, email, teléfono, SMS, ubicación, eventos, redes sociales, negocios, criptomonedas y tiendas de aplicaciones.
-- Vista previa inmediata mientras se editan los datos.
-- Personalización de módulos cuadrados o circulares.
-- Personalización de los ojos del QR con forma cuadrada o circular y color independiente.
-- Colores de módulos y fondo mediante paleta o código hexadecimal.
-- Degradados, zona tranquila, corrección de errores y fondo transparente.
-- Logo central opcional con tamaño, máscara, fondo y borde configurables.
-- Biblioteca local con búsqueda, favoritos, filtros, ordenación y vista de lista o cuadrícula.
-- La vista elegida en `Mis QR` (lista o cuadrícula) se guarda y se restaura al volver a abrir la aplicación.
-- Escáner QR integrado.
-- Copia de seguridad y restauración mediante archivos JSON locales.
-- Tema claro y oscuro.
-- Idioma configurable mediante una capa de localización extensible.
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.29.3-3730E0?logo=flutter&logoColor=white" alt="Flutter 3.29.3">
+  <img src="https://img.shields.io/badge/Android-ready-0FAE6B?logo=android&logoColor=white" alt="Android ready">
+  <img src="https://img.shields.io/badge/Offline--first-0F172A" alt="Offline first">
+</p>
 
-## Comportamiento visual del QR
+## Qué es QRfri
 
-El renderizado usa `qr_flutter`. Los módulos se configuran mediante `QrDataModuleStyle` y los ojos mediante `QrEyeStyle`. No se utiliza `foregroundColor`, porque ese parámetro puede sobrescribir el color independiente de los ojos.
+QRfri permite crear códigos QR para contenidos cotidianos, personalizar su diseño y guardarlos en una biblioteca privada dentro del dispositivo. No necesita cuenta ni servidor para crear, consultar o editar códigos.
 
-Los textos situados encima o debajo del QR fueron retirados del editor y del renderizado. Los campos antiguos se conservan en el modelo y en los datos serializados únicamente para mantener compatibilidad con QR creados anteriormente; no se muestran ni se dibujan.
+La identidad visual combina índigo (`#3730E0`), verde esmeralda (`#0FAE6B`) y superficies claras u oscuras de alto contraste.
+
+## Galería de la aplicación
+
+Las cinco capturas se muestran consecutivamente para que el repositorio refleje el flujo principal de la aplicación.
+
+### 1. Inicio y accesos rápidos
+
+![Inicio de QRfri](imagenes/image1.webp)
+
+### 2. Creación del código
+
+![Editor de QR](imagenes/image2.webp)
+
+### 3. Personalización del diseño
+
+![Diseño del QR](imagenes/image3.webp)
+
+### 4. Biblioteca Mis QR
+
+![Biblioteca de códigos](imagenes/image4.webp)
+
+### 5. Escaneo y resultado
+
+![Escáner de QR](imagenes/image5.webp)
+
+## Funcionalidades principales
+
+- Crear QR para enlaces, texto, Wi-Fi, contactos, WhatsApp, email, teléfono, SMS, ubicaciones, eventos, redes sociales, negocios, criptomonedas y tiendas de aplicaciones.
+- Ver una previsualización inmediata durante la edición.
+- Elegir colores independientes para módulos, ojos y fondo.
+- Usar módulos cuadrados o circulares y ojos cuadrados o circulares.
+- Aplicar degradados lineales o radiales, zona tranquila, corrección de errores y transparencia.
+- Añadir un logo central con tamaño, máscara, fondo y borde configurables.
+- Buscar, filtrar, ordenar, marcar favoritos y alternar entre lista y cuadrícula en `Mis QR`.
+- Escanear con cámara o importar una imagen, detectando el tipo de contenido automáticamente.
+- Editar los datos detectados antes de guardarlos, con nombre personalizado y payload normalizado.
+- Copiar el contenido, guardarlo, abrir su destino o compartir contactos y eventos como archivos compatibles.
+- Exportar QR a PNG, JPG o PDF con diferentes niveles de calidad.
+- Crear y restaurar copias de seguridad JSON locales.
+- Usar tema claro, tema oscuro, diez idiomas y un widget Android compacto.
+
+## Tipos de contenido
+
+| Tipo | Uso |
+| --- | --- |
+| Enlace | URLs HTTP y HTTPS |
+| Contacto | vCard y MECARD |
+| Wi-Fi | SSID, contraseña y seguridad |
+| WhatsApp | Conversaciones mediante `wa.me` |
+| Email | Destinatario, asunto y mensaje |
+| Teléfono / SMS | Número y mensaje opcional |
+| Ubicación | Coordenadas geográficas |
+| Evento | Datos de calendario |
+| Redes sociales | Perfiles y enlaces |
+| Negocio | Nombre, dirección y web |
+| Criptomoneda | Esquema y cantidad opcional |
+| Texto | Cualquier contenido plano |
+
+El editor valida y normaliza cada payload. Al editar un QR existente interpreta el contenido original y rellena los campos correspondientes sin duplicar información al guardar.
+
+## Lectura e importación
+
+El resultado del escaneo o de una imagen importada aparece en una previsualización amplia con tipo detectado, nombre editable, texto completo y acciones contextuales. Los enlaces, WhatsApp, email, teléfono, SMS, ubicaciones y criptomonedas pueden abrirse mediante la aplicación del sistema. Las imágenes importadas se procesan para conservar únicamente el código QR y evitar fondos negros en áreas transparentes.
+
+## Privacidad
+
+- La biblioteca se guarda localmente con `SharedPreferences`.
+- Las copias de seguridad son archivos JSON controlados por el usuario.
+- El permiso de cámara solo se solicita al usar el escáner.
+- QRfri no envía logos, códigos ni contenidos a un backend propio.
+- Las copias se validan antes de reemplazar la biblioteca existente.
 
 ## Estructura del proyecto
 
 ```text
 lib/
-  main.dart             Pantallas, modelos, almacenamiento local y renderizado QR
-  design_system.dart    Tema, colores y componentes visuales compartidos
-  localization.dart     Claves, traducciones y delegado de idiomas
-LOCALIZATION_AUDIT.md   Inventario de pantallas y estado de migración de textos
-assets/                 Imágenes y animaciones de la aplicación
-screen_tutorial_flutter/ Tutorial inicial incluido como dependencia local
-test/                   Pruebas de widgets
-android/                Proyecto Android generado por Flutter
+  main.dart                 Pantallas, modelos, navegación y flujos QR
+  design_system.dart        Colores, tema, toasts y diálogos reutilizables
+  localization.dart         Catálogo y delegado de idiomas
+android/                    Actividad, widget y recursos Android
+assets/                     Logos, ilustraciones y animaciones
+imagenes/                   Cinco capturas usadas en esta documentación
+screen_tutorial_flutter/    Dependencia local del tutorial inicial
+test/                       Pruebas de widgets
 ```
-
-## Requisitos
-
-- Flutter compatible con Dart SDK `^3.10.7`.
-- Android Studio y un SDK de Android para compilar en Android.
-- Xcode para compilar en iOS o macOS.
-- Visual Studio con las herramientas de escritorio para Windows.
-
-## Uso local
-
-Instala las dependencias con Flutter y abre el proyecto en Android Studio, VS Code o IntelliJ. Selecciona un dispositivo o emulador y ejecuta la aplicación desde el IDE.
-
-Para una compilación de distribución, usa el comando de Flutter correspondiente a la plataforma objetivo, por ejemplo Android APK, Android App Bundle, iOS, macOS o Windows.
-
-## Datos y privacidad
-
-QRfri no necesita una cuenta ni un backend. La biblioteca se guarda con `SharedPreferences` y las copias de seguridad se generan como archivos JSON en el almacenamiento de documentos de la aplicación. El usuario decide cuándo exportar o compartir un contenido.
-
-Los permisos de cámara y acceso a archivos solo son necesarios para escanear códigos o seleccionar logos y copias de seguridad.
-
-Las copias de seguridad se validan completas antes de reemplazar la biblioteca. Si el JSON está dañado o no contiene una lista válida de QR, la operación se cancela sin borrar los datos existentes.
-
-## Pruebas y calidad
-
-La prueba existente valida la pantalla inicial y el acceso principal para crear un QR. Antes de publicar una versión, conviene ejecutar el análisis estático y las pruebas de Flutter desde un entorno de desarrollo configurado.
-
-## Publicación en Git
-
-El archivo `.gitignore` excluye artefactos generados, cachés, configuraciones locales, archivos de IDE, logs y credenciales de firma. Se deben subir el código fuente, `pubspec.yaml`, `pubspec.lock`, los assets, las carpetas de plataforma necesarias y las pruebas. No se deben subir claves, contraseñas, archivos `.env` reales ni respaldos con datos personales.
-
-## Licencia
-
-No se ha definido una licencia de distribución en este proyecto. Añade una licencia antes de publicar el repositorio o distribuir la aplicación fuera de tu equipo.
-
-## Prueba de lectura y acciones
-
-La opción **Probar lectura** analiza una captura del QR que está en pantalla; no abre la cámara. Después de leerlo muestra el tipo detectado y el texto completo. El botón contextual permite abrir enlaces, WhatsApp, email, teléfono, SMS, ubicaciones y criptomonedas mediante la aplicación del sistema. Los contactos (`vCard`) y eventos (`VEVENT`) se comparten como archivos para que el usuario elija la aplicación que los importará. Wi-Fi y texto se pueden copiar directamente.
-
-## Avisos y confirmaciones
-
-Todos los SnackBar usan el componente `showQrToast`, con estados de información, éxito, advertencia y error, contraste para tema claro y oscuro, icono, duración y posición consistentes. Las confirmaciones destructivas usan `showQrConfirmation` y el color rojo solo para eliminar. Las operaciones asíncronas muestran éxito únicamente después de completarse; los fallos muestran un aviso de error.
-
-## Edicion de codigos existentes
-
-Al editar un QR guardado, QRfri interpreta el contenido serializado y vuelve a llenar los campos del formulario. Se soportan URL, contactos vCard y MECARD, Wi-Fi, WhatsApp, email, teléfono, SMS, ubicación, eventos, redes sociales, negocios, criptomonedas, tiendas y texto. Al guardar se genera una sola representación normalizada para evitar repetir líneas o valores.
-
-## Exportacion
-
-Desde el detalle de cualquier QR, el botón `Exportar` permite seleccionar corrección, calidad (512, 1024, 2048 o 4096 px) y formato PNG, JPG o PDF. El archivo se genera desde la vista personalizada actual y se comparte después de escribirse correctamente. PNG conserva transparencia; JPG y PDF usan fondo blanco para evitar zonas negras.
-
-## Ayuda al crear
-
-En la pantalla `Crear QR` o `Editar QR`, el icono de ayuda de la barra superior explica qué dato corresponde a cada campo del tipo seleccionado. Las indicaciones cubren enlaces, contactos, Wi-Fi, mensajería, ubicaciones, eventos, redes sociales, negocios, criptomonedas, tiendas y texto.
 
 ## Idiomas
 
-La clase `QrFriLocalizations` centraliza las claves traducibles y el delegado de Flutter. QRfri permite seleccionar Español, English, Português, Français, 中文 (chino simplificado), Deutsch, 日本語, 한국어, Italiano y Русский. Las pantallas, controles, tipos de QR, mensajes, ayuda de campos y tutorial tienen traducciones nativas para estos idiomas. El idioma se guarda en las preferencias locales (`languageCode`) y se puede cambiar desde `Ajustes > Idioma`; si el sistema usa un idioma no compatible, se selecciona English. Para añadir otro idioma se agrega una entrada a la tabla de claves y a `supported` sin modificar la lógica de almacenamiento o navegación.
+QRfri incluye español, inglés, portugués, francés, chino simplificado, alemán, japonés, coreano, italiano y ruso. Las claves están centralizadas en `QrFriLocalizations`, de modo que añadir otro idioma no requiere cambiar la lógica de las pantallas.
 
-La auditoría cubre la navegación inferior, inicio, biblioteca, accesos rápidos, ajustes, permisos del escáner, etiquetas de tipos de QR, ayuda contextual, tutorial y mensajes de copias de seguridad. Las claves nuevas pueden usar un fallback explícito mientras se incorporan al catálogo, sin afectar a los idiomas ya disponibles.
+## Requisitos
+
+- Flutter estable `3.29.3`.
+- Dart compatible con `^3.10.7`.
+- Android Studio y SDK de Android para Android.
+- Xcode para iOS o macOS.
+- Visual Studio con herramientas de escritorio para Windows.
+
+## Uso local
+
+1. Clona el repositorio.
+2. Abre el proyecto en Android Studio, VS Code o IntelliJ.
+3. Instala las dependencias usando el `pubspec.lock` incluido.
+4. Selecciona un dispositivo o emulador y ejecuta QRfri desde tu entorno Flutter.
+
+El `pubspec.lock` se conserva para reproducir las mismas versiones de dependencias entre equipos y CI.
+
+## Compilación y releases
+
+El workflow [`.github/workflows/android-release.yml`](.github/workflows/android-release.yml) usa Flutter `3.29.3`, Java 17 y `flutter pub get --enforce-lockfile`. Genera APK por arquitectura y App Bundle, sube los artefactos y crea una GitHub Release al publicar un tag `v*`.
+
+```bash
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+La configuración Android actual usa firma debug para facilitar las compilaciones iniciales. Antes de publicar en Google Play, configura una firma release mediante secretos de GitHub y `key.properties`, excluido por `.gitignore`.
+
+## Calidad y contribución
+
+Las operaciones asíncronas muestran confirmaciones solo después de completarse y utilizan mensajes de error cuando fallan. Mantén los componentes de `design_system.dart`, la paleta QRfri, el contraste claro/oscuro y las traducciones al realizar cambios.
+
+No subas credenciales, archivos `.env` reales, backups con datos personales ni artefactos de compilación. Consulta `.gitignore` antes de crear un commit.
+
+## Licencia
+
+Este proyecto todavía no define una licencia de distribución. Añade una licencia antes de publicar QRfri fuera de tu equipo.
