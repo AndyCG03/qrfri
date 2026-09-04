@@ -120,7 +120,7 @@ QRfri incluye español, inglés, portugués, francés, chino simplificado, alem�
 ## Requisitos
 
 - Flutter estable `3.29.3`.
-- Dart compatible con `^3.10.7`.
+- Dart compatible con `^3.7.2` (incluido en Flutter `3.29.3`).
 - Android Studio y SDK de Android para Android.
 - Xcode para iOS o macOS.
 - Visual Studio con herramientas de escritorio para Windows.
