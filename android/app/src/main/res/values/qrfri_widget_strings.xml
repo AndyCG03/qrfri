@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="qrfri_widget_title">QRfri</string>
+    <string name="qrfri_widget_description">Accesos rápidos para escanear o buscar códigos QR</string>
+    <string name="qrfri_widget_scan">Escanear</string>
+    <string name="qrfri_widget_search">Buscar QR</string>
+</resources>

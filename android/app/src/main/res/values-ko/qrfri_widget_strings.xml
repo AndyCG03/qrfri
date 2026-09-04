@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><string name="qrfri_widget_title">QRfri</string><string name="qrfri_widget_description">QR 코드를 스캔하거나 검색하는 빠른 실행</string><string name="qrfri_widget_scan">스캔</string><string name="qrfri_widget_search">QR 검색</string></resources>

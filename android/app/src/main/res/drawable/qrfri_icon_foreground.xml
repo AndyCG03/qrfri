@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Extra inset keeps the complete logo inside Android launcher masks. -->
+    <item android:top="25dp" android:bottom="25dp" android:left="25dp" android:right="25dp">
+        <bitmap android:src="@drawable/qrfri_icon" android:gravity="fill" />
+    </item>
+</layer-list>
