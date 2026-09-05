@@ -43,6 +43,9 @@ class QrFriLocalizations {
     'settings.widgetTheme': {'es': 'Tema del widget', 'en': 'Widget theme'},
     'settings.widgetTheme.light': {'es': 'Claro', 'en': 'Light'},
     'settings.widgetTheme.black': {'es': 'Negro', 'en': 'Black'},
+    'settings.widgetTheme.enable': {'es': 'Activar tema del widget', 'en': 'Enable widget theme'},
+    'settings.widgetTheme.enable.subtitle': {'es': 'Usa el tema elegido en el acceso rápido', 'en': 'Use the selected theme in the quick-access widget'},
+    'settings.widgetTheme.disabled': {'es': 'Desactivado', 'en': 'Disabled'},
     'settings.shortcuts': {'es': 'Accesos rápidos', 'en': 'Quick access'},
     'settings.shortcuts.subtitle': {'es': 'Añade, elimina y ordena los tipos del inicio', 'en': 'Add, remove, and reorder types on the home screen'},
     'settings.language': {'es': 'Idioma', 'en': 'Language'},
@@ -308,6 +311,8 @@ class QrFriLocalizations {
     'reader.result': {'es': 'Resultado detectado', 'en': 'Detected result'},
     'reader.copy': {'es': 'Copiar', 'en': 'Copy'},
     'reader.error.open': {'es': 'No se pudo abrir el contenido', 'en': 'Could not open the content'},
+    'reader.error.read': {'es': 'No se pudo leer este QR. Aumenta el contraste o el tamaño.', 'en': 'Could not read this QR. Increase contrast or size.'},
+    'reader.error.action': {'es': 'No se pudo completar esta acción. Puedes copiar el contenido manualmente.', 'en': 'Could not complete this action. You can copy the content manually.'},
     'detail.content': {'es': 'Contenido', 'en': 'Content'},
     'detail.copyContent': {'es': 'Copiar contenido', 'en': 'Copy content'},
     'detail.export': {'es': 'Exportar', 'en': 'Export'},
@@ -453,35 +458,35 @@ class QrFriLocalizations {
   static const _secondaryOverrides = <String, Map<String, String>>{
     'pt': {
       'type.social': 'Redes sociais', 'type.business': 'Negócio', 'type.crypto': 'Criptomoeda', 'type.appStore': 'Lojas de apps',
-      'field.Email': 'E-mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Nome exato da rede Wi-Fi.', 'help.Contraseña': 'Senha da rede; deixe vazia para redes abertas.', 'help.Número': 'Número com código do país, sem espaços.', 'help.Mensaje': 'Texto da mensagem (opcional).',
+       'field.Email': 'E-mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': 'Não foi possível ler este QR. Aumente o contraste ou o tamanho.', 'reader.error.action': 'Não foi possível concluir esta ação. Você pode copiar o conteúdo manualmente.', 'help.SSID': 'Nome exato da rede Wi-Fi.', 'help.Contraseña': 'Senha da rede; deixe vazia para redes abertas.', 'help.Número': 'Número com código do país, sem espaços.', 'help.Mensaje': 'Texto da mensagem (opcional).',
     },
     'fr': {
       'type.social': 'Réseaux sociaux', 'type.business': 'Entreprise', 'type.crypto': 'Cryptomonnaie', 'type.appStore': 'Boutiques d’applications',
-      'field.Email': 'E-mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Nom exact du réseau Wi-Fi.', 'help.Contraseña': 'Mot de passe du réseau ; laissez vide pour un réseau ouvert.', 'help.Número': 'Numéro avec indicatif pays, sans espaces.', 'help.Mensaje': 'Texte initial du message (facultatif).',
+       'field.Email': 'E-mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': 'Impossible de lire ce QR. Augmentez le contraste ou la taille.', 'reader.error.action': 'Impossible de terminer cette action. Vous pouvez copier le contenu manuellement.', 'help.SSID': 'Nom exact du réseau Wi-Fi.', 'help.Contraseña': 'Mot de passe du réseau ; laissez vide pour un réseau ouvert.', 'help.Número': 'Numéro avec indicatif pays, sans espaces.', 'help.Mensaje': 'Texte initial du message (facultatif).',
     },
     'de': {
       'type.social': 'Soziale Netzwerke', 'type.business': 'Geschäft', 'type.crypto': 'Kryptowährung', 'type.appStore': 'App-Stores',
-      'field.Email': 'E-Mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Exakter Name des WLANs.', 'help.Contraseña': 'Netzwerkpasswort; für offene Netze leer lassen.', 'help.Número': 'Nummer mit Ländervorwahl, ohne Leerzeichen.', 'help.Mensaje': 'Anfänglicher Nachrichtentext (optional).',
+       'field.Email': 'E-Mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': 'Dieser QR konnte nicht gelesen werden. Erhöhen Sie Kontrast oder Größe.', 'reader.error.action': 'Diese Aktion konnte nicht abgeschlossen werden. Sie können den Inhalt manuell kopieren.', 'help.SSID': 'Exakter Name des WLANs.', 'help.Contraseña': 'Netzwerkpasswort; für offene Netze leer lassen.', 'help.Número': 'Nummer mit Ländervorwahl, ohne Leerzeichen.', 'help.Mensaje': 'Anfänglicher Nachrichtentext (optional).',
     },
     'it': {
       'type.social': 'Social network', 'type.business': 'Attività', 'type.crypto': 'Criptovaluta', 'type.appStore': 'Store di app',
-      'field.Email': 'E-mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Nome esatto della rete Wi-Fi.', 'help.Contraseña': 'Password della rete; lascia vuoto per reti aperte.', 'help.Número': 'Numero con prefisso internazionale, senza spazi.', 'help.Mensaje': 'Testo iniziale del messaggio (opzionale).',
+       'field.Email': 'E-mail', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': 'Impossibile leggere questo QR. Aumenta il contrasto o la dimensione.', 'reader.error.action': 'Impossibile completare questa azione. Puoi copiare manualmente il contenuto.', 'help.SSID': 'Nome esatto della rete Wi-Fi.', 'help.Contraseña': 'Password della rete; lascia vuoto per reti aperte.', 'help.Número': 'Numero con prefisso internazionale, senza spazi.', 'help.Mensaje': 'Testo iniziale del messaggio (opzionale).',
     },
     'ru': {
       'type.social': 'Социальные сети', 'type.business': 'Бизнес', 'type.crypto': 'Криптовалюта', 'type.appStore': 'Магазины приложений',
-      'field.Email': 'Электронная почта', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Точное имя сети Wi-Fi.', 'help.Contraseña': 'Пароль сети; оставьте пустым для открытой сети.', 'help.Número': 'Номер с кодом страны, без пробелов.', 'help.Mensaje': 'Начальный текст сообщения (необязательно).',
+       'field.Email': 'Электронная почта', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': 'Не удалось прочитать этот QR. Увеличьте контраст или размер.', 'reader.error.action': 'Не удалось завершить это действие. Вы можете скопировать содержимое вручную.', 'help.SSID': 'Точное имя сети Wi-Fi.', 'help.Contraseña': 'Пароль сети; оставьте пустым для открытой сети.', 'help.Número': 'Номер с кодом страны, без пробелов.', 'help.Mensaje': 'Начальный текст сообщения (необязательно).',
     },
     'zh': {
       'type.social': '社交媒体', 'type.business': '商家', 'type.crypto': '加密货币', 'type.appStore': '应用商店',
-      'field.Email': '电子邮件', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Wi-Fi 网络的准确名称。', 'help.Contraseña': '网络密码；开放网络可留空。', 'help.Número': '带国家代码的号码，不含空格。', 'help.Mensaje': '消息的初始文本（可选）。',
+       'field.Email': '电子邮件', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': '无法读取此二维码。请提高对比度或尺寸。', 'reader.error.action': '无法完成此操作。您可以手动复制内容。', 'help.SSID': 'Wi-Fi 网络的准确名称。', 'help.Contraseña': '网络密码；开放网络可留空。', 'help.Número': '带国家代码的号码，不含空格。', 'help.Mensaje': '消息的初始文本（可选）。',
     },
     'ja': {
       'type.social': 'ソーシャル', 'type.business': 'ビジネス', 'type.crypto': '暗号通貨', 'type.appStore': 'アプリストア',
-      'field.Email': 'メール', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Wi-Fiネットワークの正確な名前。', 'help.Contraseña': 'ネットワークのパスワード。オープンネットワークでは空欄にします。', 'help.Número': '国番号付きの番号（空白なし）。', 'help.Mensaje': 'メッセージの初期テキスト（任意）。',
+       'field.Email': 'メール', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': 'このQRを読み取れませんでした。コントラストまたはサイズを上げてください。', 'reader.error.action': 'この操作を完了できませんでした。内容を手動でコピーできます。', 'help.SSID': 'Wi-Fiネットワークの正確な名前。', 'help.Contraseña': 'ネットワークのパスワード。オープンネットワークでは空欄にします。', 'help.Número': '国番号付きの番号（空白なし）。', 'help.Mensaje': 'メッセージの初期テキスト（任意）。',
     },
     'ko': {
       'type.social': '소셜 미디어', 'type.business': '비즈니스', 'type.crypto': '암호화폐', 'type.appStore': '앱 스토어',
-      'field.Email': '이메일', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'help.SSID': 'Wi-Fi 네트워크의 정확한 이름입니다.', 'help.Contraseña': '네트워크 비밀번호입니다. 개방형 네트워크는 비워 두세요.', 'help.Número': '국가 코드가 포함된 번호(공백 없음).', 'help.Mensaje': '메시지의 초기 텍스트(선택 사항).',
+       'field.Email': '이메일', 'field.SSID': 'SSID', 'field.Instagram': 'Instagram', 'field.Facebook': 'Facebook', 'field.LinkedIn': 'LinkedIn', 'field.WhatsApp': 'WhatsApp', 'reader.error.read': '이 QR을 읽을 수 없습니다. 대비나 크기를 높여 주세요.', 'reader.error.action': '이 작업을 완료할 수 없습니다. 내용을 수동으로 복사할 수 있습니다.', 'help.SSID': 'Wi-Fi 네트워크의 정확한 이름입니다.', 'help.Contraseña': '네트워크 비밀번호입니다. 개방형 네트워크는 비워 두세요.', 'help.Número': '국가 코드가 포함된 번호(공백 없음).', 'help.Mensaje': '메시지의 초기 텍스트(선택 사항).',
     },
   };
 

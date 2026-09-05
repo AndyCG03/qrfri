@@ -7,7 +7,7 @@
 <p align="center">Generador, personalizador y lector de códigos QR privado, local y offline-first.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Flutter-3.29.3-3730E0?logo=flutter&logoColor=white" alt="Flutter 3.29.3">
+  <img src="https://img.shields.io/badge/Flutter-3.38.6-3730E0?logo=flutter&logoColor=white" alt="Flutter 3.38.6">
   <img src="https://img.shields.io/badge/Android-ready-0FAE6B?logo=android&logoColor=white" alt="Android ready">
   <img src="https://img.shields.io/badge/Offline--first-0F172A" alt="Offline first">
 </p>
@@ -103,15 +103,25 @@ El resultado del escaneo o de una imagen importada aparece en una previsualizaci
 
 ```text
 lib/
-  main.dart                 Pantallas, modelos, navegación y flujos QR
-  design_system.dart        Colores, tema, toasts y diálogos reutilizables
-  localization.dart         Catálogo y delegado de idiomas
-android/                    Actividad, widget y recursos Android
-assets/                     Logos, ilustraciones y animaciones
-imagenes/                   Cinco capturas usadas en esta documentación
-screen_tutorial_flutter/    Dependencia local del tutorial inicial
-test/                       Pruebas de widgets
+  main.dart                         Arranque mínimo y exportación compatible
+  app/app.dart                       Configuración raíz, tema y launch gate
+  core/qr/qr_payload.dart            Detección, validación y acciones QR
+  core/storage/local_store.dart      Persistencia, modelos y copias JSON
+  features/home/                     Inicio y navegación principal
+  features/qr_creation/              Editor y personalización QR
+  features/qr_library/               Biblioteca, tarjetas y exportación
+  features/qr_scanner/               Cámara, importación y lectura
+  features/settings/                 Ajustes, idiomas y accesos rápidos
+  features/tutorial/                 Tutorial de primera ejecución
+  design_system.dart                  Paleta, tema, toasts y diálogos
+  localization.dart                   Catálogo y delegado de idiomas
+android/                              Actividad, widget y recursos Android
+assets/                               Logos, ilustraciones y animaciones
+imagenes/                             Capturas usadas en esta documentación
+test/                                 Pruebas de widgets
 ```
+
+La aplicación conserva el estado actual con `ChangeNotifier` y `SharedPreferences`. Las funciones relacionadas se agrupan mediante archivos `part` para mantener compatibilidad con los modelos, claves de almacenamiento y clases privadas existentes durante la migración arquitectónica.
 
 ## Idiomas
 
@@ -137,12 +147,17 @@ El `pubspec.lock` se conserva para reproducir las mismas versiones de dependenci
 
 ## Compilación y releases
 
-El workflow [`.github/workflows/android-release.yml`](.github/workflows/android-release.yml) usa Flutter `3.29.3`, Java 17 y `flutter pub get --enforce-lockfile`. Genera APK por arquitectura y App Bundle, sube los artefactos y crea una GitHub Release al publicar un tag `v*`.
+El workflow [`.github/workflows/android-release.yml`](.github/workflows/android-release.yml) usa Flutter `3.38.6`, Java 17 y `flutter pub get --enforce-lockfile`. Genera APK por arquitectura y App Bundle, sube los artefactos y crea una GitHub Release al publicar un tag `v*`.
 
 ```bash
+git add .
+git commit -m "Refactor architecture and restore tutorial"
+git push origin main
 git tag v1.0.1
 git push origin v1.0.1
 ```
+
+El tag debe apuntar al commit que ya está publicado en `main`. El tag `v1.0.0` ya fue utilizado; para cambios posteriores se recomienda incrementar la versión (`v1.0.1`, `v1.0.2`, etc.).
 
 La configuración Android actual usa firma debug para facilitar las compilaciones iniciales. Antes de publicar en Google Play, configura una firma release mediante secretos de GitHub y `key.properties`, excluido por `.gitignore`.
 

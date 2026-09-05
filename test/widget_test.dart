@@ -4,7 +4,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   testWidgets('shows the QRfri home screen', (tester) async {
-    SharedPreferences.setMockInitialValues({});
+    // The launch gate shows the tutorial on a first run. This test targets
+    // the home shell, so model a returning user while keeping the production
+    // first-run behavior intact.
+    SharedPreferences.setMockInitialValues({
+      'seen_tutorial': true,
+      'languageCode': 'es',
+    });
     final store = LocalStore(await SharedPreferences.getInstance());
     await store.load();
 
